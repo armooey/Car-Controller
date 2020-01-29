@@ -7837,15 +7837,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 315763916064577358, guid: 37ec82ab8eba1384baadcaa1d88b7f72,
+        type: 3}
+      propertyPath: m_SuspensionSpring.spring
+      value: 15000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3256199504775548167, guid: 37ec82ab8eba1384baadcaa1d88b7f72,
+        type: 3}
+      propertyPath: m_SuspensionSpring.spring
+      value: 15000
+      objectReference: {fileID: 0}
     - target: {fileID: 5779707324575717574, guid: 37ec82ab8eba1384baadcaa1d88b7f72,
         type: 3}
       propertyPath: m_Mass
       value: 700
       objectReference: {fileID: 0}
+    - target: {fileID: 6363277281759014048, guid: 37ec82ab8eba1384baadcaa1d88b7f72,
+        type: 3}
+      propertyPath: m_SuspensionSpring.spring
+      value: 15000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312933232473402759, guid: 37ec82ab8eba1384baadcaa1d88b7f72,
+        type: 3}
+      propertyPath: m_SuspensionSpring.spring
+      value: 15000
+      objectReference: {fileID: 0}
     - target: {fileID: 7471102308456344661, guid: 37ec82ab8eba1384baadcaa1d88b7f72,
         type: 3}
       propertyPath: torque
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7471102308456344661, guid: 37ec82ab8eba1384baadcaa1d88b7f72,
+        type: 3}
+      propertyPath: drivetrain
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7471102308456344661, guid: 37ec82ab8eba1384baadcaa1d88b7f72,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37ec82ab8eba1384baadcaa1d88b7f72, type: 3}
