@@ -1,16 +1,35 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
+    public enum Drivetrain {FWD,
+        RWD,
+        FourWD};
+    
     private float horizontalInput, verticalInput;
     private float steeringAngle;
+    
+    
+    [Header("Car Settings")]
+    public Drivetrain drivetrain = Drivetrain.FWD;
     public float maxSteeringAngle = 30;
     public float torque = 60;
-    public WheelCollider frontRightWheel, frontLeftWheel, rearRightWheel, rearLeftWheel;
-    public Transform frontRightTransform, frontLeftTransform, rearRightTransfrom, rearLeftTransform;
+
+    [Header("Wheel Colliders")] 
+    public WheelCollider frontRightWheel;
+    public WheelCollider frontLeftWheel;
+    public WheelCollider rearRightWheel;
+    public WheelCollider rearLeftWheel;
+
+    [Header("Wheels")] 
+    public Transform frontRightTransform;
+    public Transform frontLeftTransform;
+    public Transform rearRightTransfrom;
+    public Transform rearLeftTransform;
 
     private void GetInput()
     {
@@ -20,8 +39,23 @@ public class CarController : MonoBehaviour
 
     private void Accelerate()
     {
-        frontLeftWheel.motorTorque = torque * verticalInput;
-        frontRightWheel.motorTorque = torque * verticalInput;
+        switch (drivetrain)
+        {
+            case Drivetrain.FWD:
+                frontLeftWheel.motorTorque = torque * verticalInput;
+                frontRightWheel.motorTorque = torque * verticalInput;
+                break;
+            case Drivetrain.RWD:
+                rearLeftWheel.motorTorque = torque * verticalInput;
+                rearRightWheel.motorTorque = torque * verticalInput;
+                break;
+            case Drivetrain.FourWD:
+                frontLeftWheel.motorTorque = torque * verticalInput;
+                frontRightWheel.motorTorque = torque * verticalInput;
+                rearLeftWheel.motorTorque = torque * verticalInput;
+                rearRightWheel.motorTorque = torque * verticalInput;
+                break;
+        }
     }
 
     private void Steer()
